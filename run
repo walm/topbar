@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+# if already running, restart
+if [[ -f lastpid ]]; then ./stop; fi
+bash "$DIR/bar.sh" | lemonbar -p -d -g x36xx -u 2 \
+        -B "#FF121212" \
+        -f "-*-terminesspowerline-*-*-*--28-*-*-*-*-*-*-*" &
+        # -f "-*-terminus-*-*-*-28-*-*-*-*-*-*-*" &
+
+echo "$!" > lastpid
