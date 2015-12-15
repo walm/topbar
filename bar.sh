@@ -15,7 +15,7 @@ Clock() {
 }
 
 Battery() {
-  BATPERC=$(acpi -b | awk '{print $4}' | sed 's/%//g')
+  BATPERC=$(acpi -b | awk '{print $4}' | sed 's/%\|,//g')
   if [[ $BATPERC -le 15 ]]; then
     echo "${RED}$BATPERC%"
   else
