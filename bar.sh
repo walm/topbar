@@ -39,13 +39,14 @@ App() {
   then
     echo "" # window not found, just blank it
   else
+    # shellcheck disable=SC2046
     APP="$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)"
     echo "${APP}"
   fi
 }
 
 Ssh() {
-  SSH_CONNS=$(ps -ef | grep "ssh " | grep -v grep -c)
+  SSH_CONNS=$(pgrep -f "ssh ")
   if [[ $SSH_CONNS -ge 1 ]]; then
     echo "${GREEN}${DOT}"
   fi

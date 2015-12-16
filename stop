@@ -1,5 +1,5 @@
 #!/bin/bash
 
 pid=$(cat lastpid)
-kill -n 9 $pid
+kill -n 9 "$pid"
 rm lastpid
