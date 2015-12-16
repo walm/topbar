@@ -46,7 +46,7 @@ App() {
 }
 
 Ssh() {
-  SSH_CONNS=$(pgrep -f "ssh ")
+  SSH_CONNS=$(pgrep -f "ssh " | wc -l)
   if [[ $SSH_CONNS -ge 1 ]]; then
     echo "${GREEN}${DOT}"
   fi
