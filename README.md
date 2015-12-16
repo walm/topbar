@@ -1,6 +1,8 @@
 Topbar
 ======
 
+[![Build Status](https://travis-ci.org/walm/topbar.svg?branch=master)](https://travis-ci.org/walm/topbar)
+
 My top positioned [lemonbar](https://github.com/LemonBoy/bar)
 
 ## Parts
