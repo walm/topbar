@@ -35,7 +35,7 @@ Load() {
 
 # App - current focused window name
 App() {
-  if ! xdotool getwindowpid $(xdotool getwindowfocus) > /dev/null 2>&1
+  if ! xdotool getwindowpid "$(xdotool getwindowfocus)" > /dev/null 2>&1
   then
     echo "" # window not found, just blank it
   else
@@ -64,7 +64,7 @@ while true; do
   # content
   LEFT="  $(Notification) $(Ssh)"
   CENTER="" #"$(App)"
-  RIGHT="${FG}$(Mem) ${FG}$(Battery)${FG} | $(Clock)  "
+  RIGHT="${FG}$(Mem) ${FG}$(Battery)${DIM} | ${FG}$(Clock)  "
 
   # output
   echo "${FG}%{l}${LEFT}%{c}${CENTER}%{r}${RIGHT}%{F-}"

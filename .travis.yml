@@ -1,0 +1,15 @@
+sudo: false
+language: haskell
+
+install:
+  - cabal install shellcheck
+
+before_script:
+  - export PATH=$PATH:$HOME/.cabal/bin/
+
+script:
+  - shellcheck -s bash bar.sh run stop
+
+matrix:
+  fast_finish: true
+
